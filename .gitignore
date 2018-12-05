@@ -1,0 +1,22 @@
+#ide
+.idea
+.vscode
+
+
+#package-lock.json
+package-lock.json
+
+#public
+public/css/luxalpa.css
+public/angular.js
+public/luxalpa.js
+public/partialClient.js
+
+
+#node_modules
+#node_modules
+
+# version
+src/js/version.js
+
+

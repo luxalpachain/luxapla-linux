@@ -1,0 +1,35 @@
+<div ng-controller="editCorrespondentDeviceController">
+	<nav class="tab-bar chatmysetting">
+		<section class="left-small">
+			<a ng-click="$root.go('correspondentDevices.correspondentDevice')">
+				<img src="./img/chatbackstate.png">
+			</a>
+		</section>
+
+		<section class="middle tab-bar-section">
+			<h1 class="title ellipsis">
+				{{name}}
+			</h1>
+		</section>
+	</nav>
+	<div>
+		<div class="height13"></div>
+		<div class="p15h">
+			<div class="chatsettingtitle" translate>Device address:</div>
+			<div class="chatsettingaddrtext">{{correspondent.device_address}}@{{hub}}</div>
+			<form name="editForm" no-validate>
+				<div class="text-warning size-12 m10b" ng-show="error">{{error|translate}}</div>
+				<div class="chatsettingrename">
+					<div class="chatsettingtitle" translate>Rename:</div>
+					<input type="text" id="name" name="name" ng-model="name" required>
+				</div>
+				<button ng-disabled="!editForm.$valid" ng-click="save()" translate class="m20t">
+					Save
+				</button>
+				<a class="chatclearrecords"  ng-click="purge_chat()" translate>
+					clear chat history
+				</a>
+			</form>
+		</div>
+	</div>
+</div>

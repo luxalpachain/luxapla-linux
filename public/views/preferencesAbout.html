@@ -1,0 +1,55 @@
+<div
+    class="topbar-container"
+    ng-include="'views/includes/topbar.html'"
+    ng-init="titleSection='About LAC'; goBackToState = true;showpopyes=false;">
+</div>
+
+<!-- 关于LuxAlpa视图 -->
+<div class="content preferences" ng-controller="preferencesAbout as about"  style="background:#F9FAFC;">
+    <div ng-controller="versionController as v">
+        <ul class="no-bullet m0">
+                <div class="height13"></div>
+            <!-- 版本 -->
+            <div class="settingli">
+                <li>
+                    <div class="ld">
+                        <span translate>Version</span>
+                    </div>
+                    <div class="rd">
+                            v{{v.version}}
+                    </div>
+                </li>
+            </div>
+            <div class="height13"></div>
+            <!-- 使用条款 -->
+            <div class="settingli">
+                <li ng-click="$root.go('preferencesGlobal.preferencesAbout.term')">
+                    <div class="ld">
+                        <span translate>Terms of Use</span>
+                    </div>
+                    <div class="rd">
+                        <img src="./img/more.png" />
+                    </div>
+                </li>
+            </div>
+            <!-- 提交哈希值，删除 -->
+            <!--<li ng-conf ng-click="$root.openExternalLink('https://github.com/luxalpa/luxalpa/tree/'+v.commitHash)">-->
+                <!--<span translate>Commit hash</span>-->
+                <!--<span class="right text-gray">-->
+                    <!--#{{v.commitHash}}-->
+                <!--</span>-->
+            <!--</li>-->
+        </ul>
+    </div>
+        <!-- 翻译者，删除 -->
+        <!--<li ng-click="$root.go('preferencesGlobal.preferencesAbout.translators')">-->
+            <!--<i class="icon-arrow-right3 size-24 right text-gray"></i>-->
+            <!--<span translate>Translators</span>-->
+        <!--</li>-->
+        <!-- 会话日志，删除 -->
+        <!--<li ng-conf ng-click="$root.go('preferencesGlobal.preferencesAbout.preferencesLogs')">-->
+            <!--<i class="icon-arrow-right3 size-24 right text-gray"></i>-->
+            <!--<span translate>Session log</span>-->
+        <!--</li>-->
+
+</div>

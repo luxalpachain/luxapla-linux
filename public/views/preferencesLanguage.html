@@ -1,0 +1,22 @@
+<div
+    class="topbar-container"
+    ng-include="'views/includes/topbar.html'"
+    ng-init="titleSection='Language'; goBackToState = true; noColor = true;showpopyes=false;">
+</div>
+
+<!-- 语言设置视图 -->
+<div class="content preferences" ng-controller="preferencesLanguageController as prefLang">
+        <div class="chatbgcolorheight" ></div>
+    <ul class="no-bullet m0 " >
+        <div class="settingli" ng-repeat="lang in prefLang.availableLanguages">
+                <li ng-click="prefLang.save(lang.isoCode)">
+                    <div class="ld">
+                        <span>{{lang.name}}</span>
+                    </div>
+                    <div class="rd ng-binding">
+                        <img  ng-show="index.defaultLanguageIsoCode == lang.isoCode" src="./img/guoxuan.png">
+                    </div>
+                </li>
+            </div>
+    </ul>
+</div>

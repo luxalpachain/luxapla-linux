@@ -1,0 +1,48 @@
+<!-- 顶部导航栏视图 -->
+<nav ng-controller="topbarController as topbar" class="tab-bar" >
+    <!-- 左区 -->
+    <section class="left-small">
+        <a class="chatpaddingleffi" ng-click="$root.go('^', true); goBackToState = null" >
+            <!--<i class="chateightmargin iconfont icon-fanhui" style="color:#fff;"> &nbsp;返回</i>-->
+            <img src="./img/chatbackstate.png">
+        </a>
+
+    </section>
+
+
+    <!-- 中间区 -->
+    <section class="middle tab-bar-section">
+        <h1 class="title ellipsis chatmysettingtitle" translate>
+            Add new device
+        </h1>
+    </section>
+</nav>
+<div class="height13"></div>
+<div class="content chatadddeviceout" ng-controller="correspondentDevicesController">
+    <ul class="no-bullet manage">
+        <div class="settingli">
+            <li ng-click="$root.go('correspondentDevices.chataddCorrespondentDevice.inviteCorrespondentDevice')">
+                <div class="ld">
+                    <img src="./img/chatinvitedevice.png">
+                    <span translate>Provide my pairing code</span>
+                </div>
+                <div class="rd">
+                    <img src="./img/more.png" ng-show="!editCorrespondentList &amp;&amp; hideRemove" />
+                </div>
+            </li>
+        </div>
+        <div class="height13"></div>
+        <div class="settingli">
+            <li ng-click="$root.go('correspondentDevices.chataddCorrespondentDevice.acceptCorrespondentInvitation')">
+                <div class="ld">
+                    <img src="./img/chatinputcode.png">
+                    <span translate>Enter the pairing code</span>
+                </div>
+                <div class="rd">
+                    <img src="./img/more.png" ng-show="!editCorrespondentList &amp;&amp; hideRemove" />
+                </div>
+            </li>
+        </div>
+
+    </ul>
+</div>

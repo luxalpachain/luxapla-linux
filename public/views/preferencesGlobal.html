@@ -1,0 +1,164 @@
+<div
+        class="topbar-container"
+        ng-include="'views/includes/topbar.html'"
+        ng-init="titleSection='Settings'; closeToHome = false; noColor = true;showpopyes=true;">
+</div>
+
+<!-- 全局设置视图 -->
+<div ng-controller="walletHomeController as home">
+        <div class="preferences" ng-controller="preferencesGlobalController as prefGlobal" ng-init="prefGlobal.init();index.tab='settings'" >
+            <div class="chatbgcolorheight" ></div>
+            <ul class="no-bullet m0 ">
+                <!-- 设备名 -->
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.preferencesDeviceName')">
+                        <div class="ld">
+                            <span translate>Device name</span>
+                        </div>
+                        <div class="rd">
+                                {{prefGlobal.deviceName}}
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+                
+                <!-- Hub -->
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.preferencesHub')">
+                        <div class="ld">
+                            <span>Hub</span>
+                        </div>
+                        <div class="rd">
+                                {{prefGlobal.hub}}
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+                <!-- TOR匿名　ng-show="!index.isCordova" -->
+                <!--<div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.preferencesTor')">
+                        <div class="ld">
+                            <span translate>TOR</span>
+                        </div>
+                        <div class="rd">
+                                {{prefGlobal.torEnabled?'On':'Off'}}
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>-->
+                <!-- 语言设定 -->
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.preferencesLanguage')">
+                        <div class="ld">
+                            <span translate>Language</span>
+                        </div>
+                        <div class="rd">
+                                {{prefGlobal.currentLanguageName|translate}}
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+                <!-- 设备地址 -->
+                <h4 translate class="settinth4titlel">Device address</h4>
+                <div class="settingli">
+                    <li>
+                        <div class="ld">
+                            <span style="font-size: 12px;">{{prefGlobal.myDeviceAddress}}</span>
+                        </div>
+                        <div class="rd" style="word-break: break-all;">
+                                
+                        </div>
+                    </li>
+                </div>
+                <!--支出限制（密码保护）-->
+                <h4 translate class="settinth4titlel">Safety Payment</h4>
+                <div class="settingli">
+                    <li>
+                        <div class="ld">
+                            <span translate>Request Password</span>
+                        </div>
+                        <div class="rd" style="word-break: break-all;">
+                            <switch id="network-name" name="encrypt"  ng-model="encrypt" style="margin-top:2px !important;" class="green right settingpopbtnl" ></switch>
+                        </div>
+                    </li>
+                </div>
+                <!-- 备份钱包口令 -->
+                <h4 translate class="settinth4titlel">Backups</h4>
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.backup')">
+                        <div class="ld">
+                            <span translate>Backup wallet seed</span>
+                        </div>
+                        <div class="rd" style="word-break: break-all;">
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+            <!-- 使用口令恢复钱包 -->
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.recoveryFromSeed')" ng-hide="index.isPrivKeyExternal">
+                        <div class="ld">
+                            <span translate>Recovery from seed</span>
+                        </div>
+                        <div class="rd" style="word-break: break-all;">
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+                <!-- 关于LuxAlpaChain -->
+                <div class="chatbgcolorheight" ></div>
+                <div class="settingli">
+                    <li ng-click="$root.go('preferencesGlobal.preferencesAbout')">
+                        <div class="ld">
+                            <span translate>About LAC</span>
+                        </div>
+                        <div class="rd" style="word-break: break-all;">
+                            <img src="./img/more.png" />
+                        </div>
+                    </li>
+                </div>
+                <div class="chatbgcolorheight" ></div>
+            </ul>
+
+            <!--<div ng-show="index.usePushNotifications">-->
+            <!--<h4></h4>-->
+            <!--<ul class="no-bullet m0">-->
+            <!--<li>-->
+            <!--<switch id="push-notifications" name="pushNotifications" ng-model="pushNotifications"-->
+            <!--class="green right"></switch>-->
+            <!--<div translate>Enable push notifications</div>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!--</div>-->
+            <!-- 见证人，删除 -->
+            <!--<h4></h4>-->
+            <!--<ul class="no-bullet m0">-->
+            <!--<li ng-click="$root.go('preferencesGlobal.preferencesWitnesses')">-->
+            <!--<i class="icon-arrow-right3 size-24 right text-gray"></i>  -->
+            <!--<div translate>Witnesses</div>-->
+            <!--</li>-->
+            <!--</ul>-->
+            
+            
+            
+            <!-- 完整备份钱包文件 -->
+            <!--<ul class="no-bullet m0">-->
+            <!--<li ng-click="$root.go('preferencesGlobal.export')" ng-hide="index.isPrivKeyExternal">-->
+            <!--<div class="right text-gray">-->
+            <!--<i class="icon-arrow-right3 size-24 text-gray"></i>-->
+            <!--</div>-->
+            <!--<div translate>Full backup</div>-->
+            <!--</li>-->
+            <!--</ul>-->
+            <!-- 使用完整备份文件还原钱包 -->
+            <!--<ul class="no-bullet m0">-->
+            <!--<li ng-click="$root.go('preferencesGlobal.import')" ng-hide="index.isPrivKeyExternal">-->
+            <!--<div class="right text-gray">-->
+            <!--<i class="icon-arrow-right3 size-24 text-gray"></i>-->
+            <!--</div>-->
+            <!--<div translate>Restore from full backup</div>-->
+            <!--</li>-->
+            <!--</ul>-->
+        </div>
+</div>
+    <div ng-include="'views/includes/menu.html'" ng-show="!index.noFocusedWallet"></div>

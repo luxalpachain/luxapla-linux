@@ -1,0 +1,44 @@
+<div ng-controller="acceptCorrespondentInvitationController">
+  <nav class="tab-bar">
+    <section class="left-small">
+      <a  ng-click="$root.go('correspondentDevices.chataddCorrespondentDevice')">
+        <img src="./img/chatbackstate.png">
+      </a>
+    </section>
+    <section class="middle tab-bar-section">
+      <h1 class="title ellipsis" translate>
+        Add new device
+      </h1>
+    </section>
+  </nav>
+
+
+  <div class="height13"></div>
+
+  <div class="onGoingProcess" ng-show="onGoingProcess">
+    <div class="onGoingProcess-content" ng-style="{'background-color':backgroundColor}">
+      <div class="spinner">
+        <div class="rect1"></div>
+        <div class="rect2"></div>
+        <div class="rect3"></div>
+        <div class="rect4"></div>
+        <div class="rect5"></div>
+      </div>
+      {{onGoingProcess|translate}}...
+    </div>
+  </div>
+
+ <div class="p15h" style="padding-top: 26px;">
+  <form name="pairingCodeForm"  no-validate class="pairingCodeForm">
+      <div class="text-warning size-12 m10b" ng-show="error">{{error|translate}}</div>
+      <div class="chatpairinfodiv" translate>
+          Enter the pairing code received from the other device.
+      </div>
+      <input type="text"  id="code" name="code" ng-model="code" required placeholder="{{'Pairing code'|translate}}" >
+      <button  type="submit"
+              ng-disabled="!pairingCodeForm.$valid"
+              ng-click="pair()" translate class="m30a">Pair</button>
+  </form>
+ </div>
+   
+</div>

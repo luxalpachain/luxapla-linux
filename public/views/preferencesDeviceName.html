@@ -1,0 +1,35 @@
+<div
+        class="topbar-container"
+        ng-include="'views/includes/topbar.html'"
+        ng-init="titleSection='Device name'; goBackToState = true;showpopyes=false;">
+</div>
+
+<!-- 设备名a视图 -->
+<div class="content preferences" ng-controller="preferencesDeviceNameController as prefDeviceName" style="background: #FFFFFF;">
+    <div class="height13"></div>
+    <!-- 提交表单 -->
+    <form name="settingsDeviceNameForm" ng-submit="prefDeviceName.save()" class="settingforml">
+        <!-- 语言设定 -->
+        <ul>
+            <div class="settingli">
+                <li>
+                    <div class="ld">
+                        <span translate>Device name</span>
+                    </div>
+                    <div class="rd">
+                            <input  type="text" style="text-align: right;font-size:16px; background: #FFFFFF;border:0px;color:#909090;" id="deviceName"  name="deviceName"  ng-model="prefDeviceName.deviceName" >
+                    </div>
+                </li>
+            </div>
+        </ul>
+        <div style="width:100%;padding:30px 15px 0 15px;">
+            <button type="submit" translate
+                     translate
+                   >Save</button>
+        </div>
+
+    </form>
+    <!-- 显示信息 -->
+    <div class="size-12 text-center" translate style="color: #909090;padding: 0 15px; margin-top: 18px;">Device name is visible to other devices you communicate with.
+    </div>
+</div>

@@ -1,0 +1,51 @@
+.popUpWindw{
+    width: 134px;
+    height: 106px;
+    position: absolute;
+    margin-top: 47px;
+}
+#indexpop{
+    margin-right: 21px;
+}
+.triangle{
+    position: absolute;
+    top: -22px;
+    right: 9px;
+    border: 8px solid transparent;
+    border-bottom: 15px solid #fff;
+}
+.triangle:after{
+    display: block;
+    content: '';
+    position: absolute;
+    border: 9px solid transparent;
+    border-bottom: 16px solid #BE935F;
+    right: -9px;
+    top: -11px;
+    z-index: -1;
+}
+.subDiv{
+    margin: 0;
+    vertical-align: middle;
+    border-bottom: 1px solid #DEDEDE;
+    padding: 0 15px;
+    line-height: 34px;
+}
+.chatpopUpWindw .subDiv:last-child{
+    border-bottom: none;
+}
+.subDiv a{
+    font-size: 12px;
+    color: #664C2A;
+    display: block;
+}
+.subDiv a:hover{
+    font-size: 12px;
+    color: #664C2A;
+}
+.subDiv a img{
+    margin-right: 18px;
+}
+
+
+

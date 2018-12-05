@@ -1,0 +1,31 @@
+<div ng-controller="editCorrespondentDeviceController">
+    <nav class="tab-bar">
+        <section class="left-small">
+            <a ng-click="cancel()">
+                <img src="./img/chatbackstate.png">
+            </a>
+        </section>
+
+        <section class="middle tab-bar-section">
+            <h1 class="title ellipsis">
+                {{name}}
+            </h1>
+        </section>
+    </nav>
+    <div class="height13"></div>
+    <div class="text-center">
+        <div class="m40t">
+            <img src="./img/bigques.png"/>
+        </div>
+        <div class="chatdeletetitle" translate>Are you sure to delete all chats with {{name}}?</div>
+        <div class="chatdeletebtn p15h">
+            <button ng-disabled="loading" ng-click="ok()" translate>
+                Yes
+            </button>
+            <button  ng-disabled="loading"
+                    class="awbtn" ng-click="cancel()" translate>
+                Cancel
+            </button>
+        </div>
+    </div>
+</div>
